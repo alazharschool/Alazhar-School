@@ -10,6 +10,8 @@ interface User {
   name: string;
   email: string;
   userType: 'student' | 'teacher' | 'admin';
+  // Backward-compatible alias for legacy references
+  role?: 'student' | 'teacher' | 'admin';
   isLoggedIn: boolean;
   phone?: string;
   age?: string;
@@ -78,6 +80,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
           name: userData.name,
           email: userData.email,
           userType: userData.user_type,
+          role: userData.user_type,
           isLoggedIn: true,
           phone: userData.phone,
           age: userData.age,
@@ -96,6 +99,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         name: supabaseUser.user_metadata?.name || supabaseUser.email?.split('@')[0] || 'User',
         email: supabaseUser.email!,
         userType: 'student',
+        role: 'student',
         isLoggedIn: true
       };
       setUser(user);
