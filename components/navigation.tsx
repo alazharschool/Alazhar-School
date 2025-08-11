@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -8,7 +8,7 @@ import { Menu, BookOpen, LogOut } from "lucide-react"
 import Image from "next/image"
 import { useUser } from "@/contexts/UserContext"
 
-export default function Navigation() {
+const Navigation = React.memo(function Navigation() {
   const { user, logout } = useUser()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -20,7 +20,6 @@ export default function Navigation() {
     { href: "/blog/articles", label: "Blog" },
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
-    { href: "/admin-login", label: "Admin", className: "text-red-600 font-bold" },
   ]
 
   const userNavItems = [
@@ -202,11 +201,8 @@ export default function Navigation() {
                       Login
                     </Link>
                   </Button>
-                <Button
-                  asChild
-                    className="bg-yellow-600 hover:bg-yellow-700 text-black rounded-full hover:scale-105 hover:shadow-gold transition-all duration-300 btn-premium text-sm sm:text-base"
-                >
-                    <Link href="/contact" onClick={() => setIsOpen(false)}>
+                <Button asChild className="bg-yellow-600 hover:bg-yellow-700 text-black rounded-full hover:scale-105 hover:shadow-gold transition-all duration-300 btn-premium text-sm sm:text-base">
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>
                     Get Started
                   </Link>
                 </Button>
@@ -220,4 +216,6 @@ export default function Navigation() {
       </div>
     </nav>
   )
-}
+})
+
+export default Navigation

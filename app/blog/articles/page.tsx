@@ -152,7 +152,7 @@ export default function ArticlesPage() {
     return matchesSearch && matchesCategory;
   });
 
-  function handleSubscribe(e?) {
+  function handleSubscribe(e?: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) {
     if (e) e.preventDefault();
     // تحقق من صحة البريد الإلكتروني
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -160,7 +160,7 @@ export default function ArticlesPage() {
       toast({ title: "Invalid Email", description: "Please enter a valid email address.", variant: "destructive" });
       return;
     }
-    toast({ title: "Subscribed!", description: "You have been subscribed to our newsletter.", variant: "success" });
+    toast({ title: "Subscribed!", description: "You have been subscribed to our newsletter." });
     setEmail("");
   }
 
@@ -325,7 +325,7 @@ export default function ArticlesPage() {
                     alt={article.title}
                       width={600}
                       height={400}
-                      layout="responsive"
+                      
                       className="rounded-t-2xl"
                       style={{
                         objectFit: 'cover',
@@ -444,7 +444,7 @@ export default function ArticlesPage() {
                     alt={article.title}
                       width={600}
                       height={400}
-                      layout="responsive"
+                      
                       className="rounded-t-2xl"
                       style={{
                         objectFit: 'cover',
@@ -576,7 +576,7 @@ export default function ArticlesPage() {
               <AnimatedButton
                 size="lg"
                 className="bg-white text-white hover:text-[#8B4513] hover:bg-gray-100 px-8 py-3 rounded-full transition-colors duration-200 font-bold"
-                onClick={(e) => handleSubscribe(e)}
+                onClick={() => handleSubscribe()}
               >
                 Subscribe
               </AnimatedButton>

@@ -13,9 +13,9 @@ export default function LoginPage() {
   const [resetEmail, setResetEmail] = useState("");
   const [resetMsg, setResetMsg] = useState("");
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setMsg("");
     setIsLoading(true);
@@ -35,7 +35,7 @@ export default function LoginPage() {
     }
   };
 
-  const handleResetPassword = async (e) => {
+  const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setResetMsg("");
     if (!resetEmail || !/\S+@\S+\.\S+/.test(resetEmail)) {
@@ -102,6 +102,11 @@ export default function LoginPage() {
         )}
         <div className="text-center text-sm">
           Don't have an account? <a href="/register" className="text-amber-600 font-semibold">Register here</a>
+        </div>
+        <div className="text-center text-sm pt-2 border-t border-gray-200">
+          <a href="/admin-login" className="text-red-600 font-semibold hover:text-red-700 transition-colors">
+            Admin Login →
+          </a>
         </div>
       </form>
     </div>

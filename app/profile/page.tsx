@@ -35,7 +35,7 @@ export default function ProfilePage() {
   const handleSave = () => {
     setIsEditing(false);
     // Handle save logic here
-    console.log("Saving profile:", profileData);
+    // Profile saved successfully
   };
 
   const handleInputChange = (field: string, value: string) => {

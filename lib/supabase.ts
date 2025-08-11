@@ -1,9 +1,33 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = "https://dqxxxzdxygysvonzortu.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxeHh4emR4eWd5c3ZvbnpvcnR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwMzIwNTgsImV4cCI6MjA2ODYwODA1OH0.DPy9lhAmyoxKC4M_HWauGZc3W5pWjyZlNvvV-Y6_ioc";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-export const supabase = createClient(supabaseUrl, supabaseKey)
+function isValidAbsoluteUrl(value?: string | null): boolean {
+  if (!value) return false
+  try {
+    const u = new URL(value)
+    return u.protocol === 'http:' || u.protocol === 'https:'
+  } catch {
+    return false
+  }
+}
+
+if (!supabaseUrl || !supabaseKey) {
+  // Do not crash the app in production if env vars are missing.
+  // The site will render, but auth/data calls will be no-ops until env vars are provided.
+  // eslint-disable-next-line no-console
+  console.warn(
+    'Supabase env vars are missing. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to enable auth & data features.'
+  )
+}
+
+const safeUrl = isValidAbsoluteUrl(supabaseUrl)
+  ? (supabaseUrl as string)
+  : 'https://placeholder.supabase.co'
+const safeKey = supabaseKey || 'public-anon-key'
+
+export const supabase = createClient(safeUrl, safeKey)
 
 
 // Database types

@@ -176,7 +176,6 @@ export default function HeroSection() {
                   fontFamily: 'Noto Serif',
                   color: '#e8b007',
                   WebkitTextStroke: '1.2px #000',
-                  textStroke: '1.2px #000',
                   textShadow: '2px 2px 8px #000, 0 2px 4px #fff',
                   letterSpacing: '1px',
                   whiteSpace: 'normal',

@@ -142,3 +142,14 @@ logs
 # Temporary files
 tmp/
 temp/
+
+# temporary image placeholders (remove when real images are added)
+public/favicon.ico
+public/favicon-16x16.png
+public/favicon-32x32.png
+public/icon-192x192.png
+public/icon-512x512.png
+public/og-image.jpg
+public/logo.png
+public/screenshot-wide.png
+public/screenshot-narrow.png

@@ -4,30 +4,31 @@ import Link from "next/link"
 import Image from "next/image"
 import { FadeInSection } from "@/components/fade-in-section"
 import { AnimatedButton } from "@/components/animated-button"
-import { ShimmerBackground } from "@/components/shimmer-background"
+import { HeroAnimatedBackground, CardAnimatedBackground } from "@/components/animated-background"
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 px-4 relative overflow-hidden">
-        <ShimmerBackground />
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <FadeInSection>
-            <div
-              className="content-overlay max-w-4xl mx-auto card-3d-stroke"
-              style={{ border: '3px solid #6d4c2b', boxShadow: '0 8px 32px 0 rgba(90,38,0,0.25), 0 1.5px 0 #fff inset', borderRadius: '2rem', background: '#fff' }}
-            >
-              <h1
-                className="text-lg md:text-xl font-bold text-gray-900 mb-6 text-center animated-underline"
-                style={{ fontFamily: 'Noto Serif', fontWeight: 900, borderBottom: '3px solid #6d4c2b', display: 'inline-block', transition: 'border-bottom-width 0.3s cubic-bezier(0.4,0,0.2,1)' }}
+            <HeroAnimatedBackground className="max-w-4xl mx-auto p-8 rounded-3xl">
+              <div
+                className="content-overlay card-3d-stroke"
+                style={{ border: '3px solid #6d4c2b', boxShadow: '0 8px 32px 0 rgba(90,38,0,0.25), 0 1.5px 0 #fff inset', borderRadius: '2rem', background: '#fff' }}
               >
-                Our Services
-              </h1>
-              <p className="text-sm text-gray-600">
-                Comprehensive Islamic education programs designed to meet your spiritual and academic needs
-              </p>
-            </div>
+                <h1
+                  className="text-lg md:text-xl font-bold text-gray-900 mb-6 text-center animated-underline"
+                  style={{ fontFamily: 'Noto Serif', fontWeight: 900, borderBottom: '3px solid #6d4c2b', display: 'inline-block', transition: 'border-bottom-width 0.3s cubic-bezier(0.4,0,0.2,1)' }}
+                >
+                  Our Services
+                </h1>
+                <p className="text-sm text-gray-600">
+                  Comprehensive Islamic education programs designed to meet your spiritual and academic needs
+                </p>
+              </div>
+            </HeroAnimatedBackground>
           </FadeInSection>
         </div>
       </section>
@@ -37,7 +38,7 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Quran Memorization */}
           <FadeInSection direction="right" delay={200}>
-            <Card className="enhanced-card brown-stroke rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:-translate-y-2">
+            <CardAnimatedBackground className="enhanced-card brown-stroke rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:-translate-y-2">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="relative h-64 lg:h-auto group overflow-hidden">
                   <Image
@@ -95,12 +96,12 @@ export default function ServicesPage() {
                   </a>
                 </div>
               </div>
-            </Card>
+            </CardAnimatedBackground>
           </FadeInSection>
 
           {/* Arabic Language */}
           <FadeInSection direction="up" delay={400}>
-            <Card className="enhanced-card brown-stroke rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:-translate-y-2">
+            <CardAnimatedBackground className="enhanced-card brown-stroke rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:-translate-y-2">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="p-8 lg:p-12 order-2 lg:order-1 content-overlay-light">
                   <div className="flex items-center mb-6">
@@ -157,12 +158,12 @@ export default function ServicesPage() {
                   />
                 </div>
               </div>
-            </Card>
+            </CardAnimatedBackground>
           </FadeInSection>
 
           {/* Islamic Studies */}
           <FadeInSection direction="up" delay={600}>
-            <Card className="enhanced-card brown-stroke rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:-translate-y-2">
+            <CardAnimatedBackground className="enhanced-card brown-stroke rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 hover:-translate-y-2">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="relative h-64 lg:h-auto group overflow-hidden">
                   <Image
@@ -218,7 +219,7 @@ export default function ServicesPage() {
                   </a>
                 </div>
               </div>
-            </Card>
+            </CardAnimatedBackground>
           </FadeInSection>
         </div>
       </section>
@@ -226,19 +227,17 @@ export default function ServicesPage() {
       {/* Final CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white text-center relative overflow-hidden" style={{ position: 'relative' }}>
         <img src="/backgrund1.svg" alt="background decorative" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, pointerEvents: 'none' }} />
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 animate-pulse opacity-50"></div>
-        </div>
         <div className="max-w-4xl mx-auto relative z-10">
           <FadeInSection>
-            <div
-              className="content-overlay-heavy bg-white/90 text-[#5a2600] rounded-2xl p-8 shadow-lg w-full"
-              style={{
-                border: '4px solid #8B4513', // بني داكن
-                boxShadow: '0 4px 32px #8B451344', // ظل بني خفيف
-                padding: '2.5rem 1.5rem'
-              }}
-            >
+            <HeroAnimatedBackground className="p-8 rounded-2xl">
+              <div
+                className="content-overlay-heavy bg-white/90 text-[#5a2600] rounded-2xl p-8 shadow-lg w-full"
+                style={{
+                  border: '4px solid #8B4513', // بني داكن
+                  boxShadow: '0 4px 32px #8B451344', // ظل بني خفيف
+                  padding: '2.5rem 1.5rem'
+                }}
+              >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Begin?</h2>
               <p className="text-xl mb-8 opacity-90">
                 Choose the program that best fits your learning goals and start your journey with our expert teachers
@@ -251,7 +250,8 @@ export default function ServicesPage() {
               >
                 View Our Pricing
               </a>
-            </div>
+              </div>
+            </HeroAnimatedBackground>
           </FadeInSection>
         </div>
       </section>

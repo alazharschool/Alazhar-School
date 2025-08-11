@@ -8,7 +8,7 @@ export default function ArabicLanguagePage() {
     id: "arabic-language",
     title: "Learn Arabic Language: From Letters to Fluency",
     excerpt: "Learn Arabic step by step — from mastering the alphabet to speaking confidently. With expert Al-Azhar-certified teachers and flexible online lessons, unlock the beauty and depth of Arabic at your own pace.",
-    image: "/arabic-language.jpg" // تأكد من وجود الصورة أو استبدلها بمسار صحيح
+    image: "/najad-arabic-.jpg" // استخدام صورة موجودة بالفعل في المشروع
   };
 
   if (!post || !post.id) {

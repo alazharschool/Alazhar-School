@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { Mail, MessageCircle, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react"
 import Image from "next/image"
-import { FadeInSection } from "@/components/fade-in-section"
 
 // Custom TikTok icon component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -22,21 +21,15 @@ const TelegramIcon = ({ className }: { className?: string }) => (
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden footer-shift-right" style={{ backgroundColor: "#e8d5b7" }}>
-      {/* Subtle Islamic geometric pattern overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-24 h-24 sm:w-32 sm:h-32 border border-amber-700 rotate-45 rounded-lg animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-20 h-20 sm:w-24 sm:h-24 border border-amber-700 rotate-12 rounded-lg animate-pulse delay-700"></div>
-        <div className="absolute top-1/2 left-1/4 w-12 h-12 sm:w-16 sm:h-16 border border-amber-700 rotate-45 rounded-lg animate-pulse delay-1000"></div>
-        <div className="absolute bottom-1/3 left-1/2 w-16 h-16 sm:w-20 sm:h-20 border border-amber-700 rotate-12 rounded-lg animate-pulse delay-500"></div>
-      </div>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10 footer-main-content">
-        <FadeInSection>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
             {/* Company Info with Logo */}
             <div className="md:col-span-2 space-y-4 sm:space-y-6">
-              <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 group">
-                <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl overflow-hidden group-hover:scale-110 transition-all duration-300 shadow-lg">
+              <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
+                <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl overflow-hidden shadow-lg">
                   <Image
                     src="/LOGOMMM.png"
                     alt="Al-Azhar School Logo"
@@ -47,7 +40,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h3
-                    className="text-base sm:text-lg font-black text-gray-900 group-hover:text-amber-700 transition-colors duration-300"
+                    className="text-base sm:text-lg font-black text-gray-900"
                     style={{ fontFamily: "Noto Serif", fontWeight: 900 }}
                   >
                     Al-Azhar School
@@ -70,22 +63,22 @@ export default function Footer() {
 
               {/* Contact Info */}
               <div className="space-y-2 sm:space-y-3">
-                <div className="flex items-center space-x-2 sm:space-x-3 group">
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700 group-hover:scale-110 transition-transform duration-300" />
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700" />
                   <span
-                    className="text-sm sm:text-sm md:text-base text-gray-800 group-hover:text-amber-700 transition-colors duration-300"
+                    className="text-sm sm:text-sm md:text-base text-gray-800"
                     style={{ fontFamily: "Noto Serif", fontWeight: 600 }}
                   >
                     al.azhar.school.london@gmail.com
                   </span>
                 </div>
-                <div className="flex items-center space-x-2 sm:space-x-3 group">
-                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700 group-hover:scale-110 transition-transform duration-300" />
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700" />
                   <a
                     href="https://wa.me/201023594533"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-sm sm:text-sm md:text-base text-gray-800 group-hover:text-amber-700 transition-colors duration-300 underline hover:no-underline"
+                    className="flex items-center space-x-2 text-sm sm:text-sm md:text-base text-gray-800 underline"
                     style={{ fontFamily: "Noto Serif", fontWeight: 600 }}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" className="inline-block sm:w-5 sm:h-5" style={{ marginRight: '4px' }}>
@@ -97,10 +90,10 @@ export default function Footer() {
                     002-01023594533
                   </a>
                 </div>
-                <div className="flex items-center space-x-2 sm:space-x-3 group">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700 group-hover:scale-110 transition-transform duration-300" />
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700" />
                   <span
-                    className="text-sm sm:text-sm md:text-base text-gray-800 group-hover:text-amber-700 transition-colors duration-300"
+                    className="text-sm sm:text-sm md:text-base text-gray-800"
                     style={{ fontFamily: "Noto Serif", fontWeight: 600 }}
                   >
                     Cairo, Egypt
@@ -169,20 +162,13 @@ export default function Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#e8d5b7] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-125 hover:rotate-6 hover:shadow-2 hover:shadow-amber-500/40 hover:-translate-y-1"
+                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#e8d5b7] rounded-full flex items-center justify-center shadow-lg"
                     style={{ 
-                      color: color, 
-                      animation: `fadeInUp 0.5s ${0.1 * idx + 0.2}s both`,
-                      transform: 'translateZ(0)',
-                      backfaceVisibility: 'hidden'
+                      color: color
                     }}
                     aria-label={label}
                   >
-                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg" />
-                    {/* Hover glow effect */}
-                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-400/20 to-amber-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    {/* Pulse effect on hover */}
-                    <div className="absolute inset-0 w-full h-full border-2 border-amber-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300"></div>
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
                   </a>
                 ))}
               </div>
@@ -192,18 +178,18 @@ export default function Footer() {
                 {["Quran Memorization", "Arabic Language", "Islamic Studies", "Tajweed Classes"].map((service) => (
                   <div
                     key={service}
-                    className="text-sm sm:text-sm md:text-base text-gray-800 hover:text-amber-700 transition-colors duration-100 cursor-pointer group"
+                    className="text-sm sm:text-sm md:text-base text-gray-800"
                     style={{ fontFamily: "Noto Serif", fontWeight: 500 }}
                   >
-                    <span className="group-hover:border-b group-hover:border-amber-700">• {service}</span>
+                    <span>• {service}</span>
                   </div>
                 ))}
                 <Link
                   href="/blog/"
-                  className="text-sm sm:text-sm md:text-base text-gray-800 hover:text-amber-700 transition-colors duration-100 cursor-pointer group"
+                  className="text-sm sm:text-sm md:text-base text-gray-800"
                   style={{ fontFamily: "Noto Serif", fontWeight: 500 }}
                 >
-                  <span className="group-hover:border-b group-hover:border-amber-700">• Blog Page</span>
+                  <span>• Blog Page</span>
                 </Link>
               </div>
             </div>
@@ -215,7 +201,7 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div
-              className="text-sm sm:text-sm md:text-base text-gray-700 hover:text-amber-700 transition-colors duration-300"
+              className="text-sm sm:text-sm md:text-base text-gray-700"
               style={{ fontFamily: "Noto Serif", fontWeight: 600 }}
             >
               © 2024 Al-Azhar School. All rights reserved.
@@ -223,44 +209,32 @@ export default function Footer() {
             <div className="flex space-x-6">
               <Link
                 href="/privacy"
-                className="text-sm sm:text-sm md:text-base text-gray-700 hover:text-amber-700 transition-colors duration-300"
+                className="text-sm sm:text-sm md:text-base text-gray-700"
                 style={{ fontFamily: "Noto Serif", fontWeight: 600 }}
               >
                 Privacy Policy
               </Link>
                 <Link
                 href="/terms"
-                className="text-sm sm:text-sm md:text-base text-gray-700 hover:text-amber-700 transition-colors duration-300"
+                className="text-sm sm:text-sm md:text-base text-gray-700"
                 style={{ fontFamily: "Noto Serif", fontWeight: 600 }}
                 >
                 Terms of Service
                 </Link>
+                <Link
+                href="/admin-login"
+                className="text-sm sm:text-sm md:text-base text-red-600"
+                style={{ fontFamily: "Noto Serif", fontWeight: 600 }}
+                >
+                Admin
+                </Link>
             </div>
           </div>
-        </FadeInSection>
+
       </div>
       
-      {/* Custom CSS for enhanced social media icons animations */}
+      {/* Custom CSS for mobile responsiveness */}
       <style jsx>{`
-        @keyframes socialIconHover {
-          0% {
-            transform: scale(1) rotate(0deg);
-          }
-          50% {
-            transform: scale(1.15) rotate(3deg);
-          }
-          100% {
-            transform: scale(1.25) rotate(6deg);
-          }
-        }
-        
-        .group:hover {
-          animation: socialIconHover 0.3s ease-out forwards;
-        }
-        
-        .group:hover .social-icon {
-          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-        }
         @media (max-width: 640px) {
           .footer-shift-right {
             padding-right: 18px !important;

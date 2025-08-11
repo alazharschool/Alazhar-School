@@ -18,7 +18,7 @@ export default function AboutPage() {
         <ShimmerBackground />
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <div
-            className="content-overlay max-w-4xl mx-auto card-3d-stroke animate-zoom-in about-hero-card"
+            className="content-overlay max-w-4xl mx-auto card-3d-stroke about-hero-card"
             style={{
               border: '3px solid #6d4c2b',
               boxShadow: '0 8px 32px 0 rgba(90,38,0,0.25), 0 1.5px 0 #fff inset',
@@ -31,28 +31,25 @@ export default function AboutPage() {
             }}
           >
             <h1
-              className="text-lg md:text-xl font-bold text-gray-900 mb-6 text-center animated-underline"
+              className="text-lg md:text-xl font-bold text-gray-900 mb-6 text-center"
               style={{
                 fontFamily: 'Noto Serif',
                 fontWeight: 900,
                 borderBottom: '3px solid #6d4c2b',
                 display: 'inline-block',
-                transition: 'border-bottom-width 0.3s cubic-bezier(0.4,0,0.2,1)',
                 color: '#fff',
-                textShadow:
-                  '0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000, ' + // thin black stroke
-                  '0 4px 16px #8b4513, 0 2px 8px #8b4513' // brown shadow
+                WebkitTextStroke: '1.4px #8B4513',
+                textShadow: '0 4px 16px #000, 0 2px 8px #000'
               }}
             >
               About Al-Azhar School
             </h1>
-            <p className="text-sm group-hover:text-[#8b4513] transition-colors duration-500" style={{
+            <p className="text-sm" style={{
               fontFamily: "Noto Serif",
               fontWeight: 600,
               color: '#fff',
-              textShadow:
-                '0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000, ' + // thin black stroke
-                '0 4px 12px #8b4513, 0 2px 6px #8b4513' // brown shadow
+              WebkitTextStroke: '0.8px #8B4513',
+              textShadow: '0 3px 12px #000, 0 1px 4px #000'
             }}>
               Bridging traditional Islamic education with modern technology to serve students worldwide
             </p>

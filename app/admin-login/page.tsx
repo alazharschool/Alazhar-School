@@ -14,10 +14,10 @@ import {
   CheckCircle, 
   AlertCircle, 
   Loader2,
-  Settings,
   Users,
   BookOpen
 } from "lucide-react";
+import { ADMIN_CONFIG } from "../../lib/admin-config";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -28,11 +28,8 @@ export default function AdminLoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Admin credentials (in real system, this would be in database)
-  const ADMIN_CREDENTIALS = {
-    username: "admin",
-    password: "admin123"
-  };
+  // استخدام بيانات الاعتماد من ملف الإعدادات
+  const ADMIN_CREDENTIALS = ADMIN_CONFIG.credentials;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,14 +47,13 @@ export default function AdminLoginPage() {
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       // Debug: Log the credentials being checked
-      console.log("Attempting login with:", { username, password });
-      console.log("Expected credentials:", ADMIN_CREDENTIALS);
+          // Attempting login
       
       // Check admin credentials (case-insensitive for username)
       if (username.toLowerCase().trim() === ADMIN_CREDENTIALS.username.toLowerCase() && 
           password === ADMIN_CREDENTIALS.password) {
         
-        console.log("Login successful!");
+        // Login successful
         
         // Store admin session
         localStorage.setItem('adminSession', 'true');
@@ -66,7 +62,7 @@ export default function AdminLoginPage() {
         // Redirect to admin dashboard
         router.push('/admin-dashboard');
       } else {
-        console.log("Login failed - credentials don't match");
+        // Login failed
         setError("Invalid username or password. Please check your credentials.");
       }
       
@@ -181,29 +177,7 @@ export default function AdminLoginPage() {
                 </div>
               </div>
 
-              {/* Demo Credentials */}
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                <h4 className="font-semibold text-blue-800 mb-2 flex items-center gap-2">
-                  <Settings className="w-4 h-4" />
-                  Demo Credentials:
-                </h4>
-                <div className="text-sm text-blue-700 space-y-1">
-                  <p><strong>Username:</strong> admin</p>
-                  <p><strong>Password:</strong> admin123</p>
-                </div>
-                <Button
-                  onClick={() => {
-                    setUsername("admin");
-                    setPassword("admin123");
-                    setError(null);
-                  }}
-                  variant="outline"
-                  size="sm"
-                  className="mt-2 w-full border-blue-300 text-blue-700 hover:bg-blue-100"
-                >
-                  Fill Demo Credentials
-                </Button>
-              </div>
+
 
               {/* Submit Button */}
               <Button

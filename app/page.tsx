@@ -12,8 +12,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ScrollingMarquee from "@/components/scrolling-marquee";
 import Quran3DIcon from "@/components/quran-3d-icon";
-import { useParams } from "next/navigation"
-import { use } from "react"
+ 
 
 export default function HomePage() {
   return (
@@ -71,13 +70,15 @@ export default function HomePage() {
         {/* Decorative Divider below Hero, always fully visible */}
         <div className="relative z-20 -mt-4 sm:-mt-8">
       <FadeInSection>
-      <button
-        type="button"
-        className="mx-auto block mb-8 sm:mb-12 bg-[#6d1811] rounded-2xl p-3 sm:px-16 shadow-[0_6px_32px_0_rgba(0,0,0,0.25)] transition-all duration-300 hover:shadow-[0_8px_40px_0_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 active:scale-95 cursor-pointer border-2 border-yellow-400 font-bold text-white text-lg sm:text-xl md:text-2xl py-4 sm:py-6 px-12 sm:px-20 about-us-btn"
-        style={{ fontFamily: 'Noto Serif', fontWeight: 900, textShadow: '2px 2px 8px rgba(255,183,0,0.10)' }}
-      >
-        About Us
-      </button>
+      <Link href="/about">
+        <button
+          type="button"
+          className="mx-auto block mb-8 sm:mb-12 bg-[#6d1811] rounded-2xl p-3 sm:px-16 shadow-[0_6px_32px_0_rgba(0,0,0,0.25)] transition-all duration-300 hover:shadow-[0_8px_40px_0_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 active:scale-95 cursor-pointer border-2 border-yellow-400 font-bold text-white text-lg sm:text-xl md:text-2xl py-4 sm:py-6 px-12 sm:px-20 about-us-btn"
+          style={{ fontFamily: 'Noto Serif', fontWeight: 900, textShadow: '2px 2px 8px rgba(255,183,0,0.10)' }}
+        >
+          About Us
+        </button>
+      </Link>
       <style jsx>{`
         @media (max-width: 768px) {
           .about-us-btn {
@@ -145,13 +146,15 @@ export default function HomePage() {
         <section className="py-12 sm:py-16 px-4 pattern-overlay-light">
         <div className="max-w-6xl mx-auto">
           <FadeInSection>
-            <button
-              type="button"
-              className="mx-auto block mb-8 sm:mb-12 bg-[#6d1811] rounded-2xl p-3 sm:px-16 shadow-[0_6px_32px_0_rgba(0,0,0,0.25)] transition-all duration-300 hover:shadow-[0_8px_40px_0_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 active:scale-95 cursor-pointer border-2 border-yellow-400 font-bold text-white text-lg sm:text-xl md:text-2xl py-4 sm:py-6 px-12 sm:px-20"
-              style={{ fontFamily: 'Noto Serif', fontWeight: 900, textShadow: '2px 2px 8px rgba(255,183,0,0.10)' }}
-            >
-              Our Services
-            </button>
+            <Link href="/services">
+              <button
+                type="button"
+                className="mx-auto block mb-8 sm:mb-12 bg-[#6d1811] rounded-2xl p-3 sm:px-16 shadow-[0_6px_32px_0_rgba(0,0,0,0.25)] transition-all duration-300 hover:shadow-[0_8px_40px_0_rgba(0,0,0,0.35)] hover:scale-105 hover:-translate-y-2 active:scale-95 cursor-pointer border-2 border-yellow-400 font-bold text-white text-lg sm:text-xl md:text-2xl py-4 sm:py-6 px-12 sm:px-20"
+                style={{ fontFamily: 'Noto Serif', fontWeight: 900, textShadow: '2px 2px 8px rgba(255,183,0,0.10)' }}
+              >
+                Our Services
+              </button>
+            </Link>
           </FadeInSection>
             <StaggeredFadeIn className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 h-full">
             {[
@@ -452,10 +455,11 @@ export default function HomePage() {
       {/* Divider */}
       {/* Statistics Section */}
         <section className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-r from-amber-50 to-yellow-50 relative overflow-hidden" style={{
-        backgroundImage: 'url(/backgrund1.svg)',
+        backgroundImage: 'url(/BACK.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
         position: 'relative'
       }}>
         <div style={{
@@ -631,10 +635,11 @@ export default function HomePage() {
       </section>
         {/* CTA Section */}
         <section className="py-12 sm:py-16 px-4 bg-gradient-to-r from-amber-50 to-yellow-50 relative overflow-hidden" style={{
-          backgroundImage: 'url(/backgrund1.svg)',
+          backgroundImage: 'url(/BACK.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
           position: 'relative'
         }}>
           <div style={{

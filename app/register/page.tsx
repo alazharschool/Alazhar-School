@@ -27,7 +27,7 @@ export default function RegisterPage() {
   const [success, setSuccess] = useState("");
   const router = useRouter();
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -35,14 +35,14 @@ export default function RegisterPage() {
     }));
   };
 
-  const handleSelectChange = (name, value) => {
+  const handleSelectChange = (name: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -74,11 +74,12 @@ export default function RegisterPage() {
         }
       });
       if (authError) throw authError;
+      const newUserId = authData.user?.id || crypto.randomUUID();
       await supabase
         .from('students')
         .insert([
           {
-            id: authData.user.id,
+            id: newUserId,
             full_name: formData.fullName,
             email: formData.email,
             phone: formData.phone,
@@ -96,7 +97,8 @@ export default function RegisterPage() {
         router.push('/login');
       }, 3000);
     } catch (error) {
-      setError(error.message || "An error occurred during registration");
+      const msg = error instanceof Error ? error.message : "An error occurred during registration";
+      setError(msg);
     } finally {
       setLoading(false);
     }

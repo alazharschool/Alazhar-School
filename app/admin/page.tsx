@@ -32,7 +32,7 @@ export default function AdminPage() {
     
     // For demo purposes, allow access if user has admin role
     // In production, check actual user roles
-    if (user.role !== 'admin' && user.role !== 'teacher') {
+    if (user.userType !== 'admin' && user.userType !== 'teacher') {
       router.push('/dashboard');
       return;
     }
@@ -40,7 +40,7 @@ export default function AdminPage() {
 
   // Load admin data
   useEffect(() => {
-    if (user?.role === 'admin' || user?.role === 'teacher') {
+    if (user?.userType === 'admin' || user?.userType === 'teacher') {
       loadAdminData();
     }
   }, [user]);

@@ -36,15 +36,15 @@ export default function AdminDashboardPage() {
     const adminSession = localStorage.getItem('adminSession');
     const username = localStorage.getItem('adminUsername');
     
-    console.log("Checking admin session:", { adminSession, username });
+    // Checking admin session
     
     if (!adminSession || !username) {
-      console.log("No admin session found, redirecting to login");
+              // No admin session found, redirecting to login
       router.push('/admin-login');
       return;
     }
     
-    console.log("Admin session found, setting username:", username);
+            // Admin session found, setting username
     setAdminUsername(username);
     
     // Update time every second

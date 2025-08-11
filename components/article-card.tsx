@@ -21,11 +21,9 @@ export default function ArticleCard({ post }: { post: any }) {
         <Image
           src={post.image}
           alt={post.title}
-          width={400}
-          height={140}
-          layout="responsive"
+          fill
           className="article-img object-cover rounded-t-2xl"
-          style={{objectFit: 'cover', objectPosition: 'center', borderTopLeftRadius: '1rem', borderTopRightRadius: '1rem', width:'100%', height:'100%'}}
+          style={{objectFit: 'cover', objectPosition: 'center', borderTopLeftRadius: '1rem', borderTopRightRadius: '1rem'}}
         />
         <style jsx>{`
           @media (max-width: 640px) {
