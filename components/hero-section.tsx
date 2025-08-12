@@ -161,6 +161,7 @@ export default function HeroSection() {
                 height={270}
                   className="hero-logo w-40 sm:w-[220px] md:w-[320px] lg:w-[420px] xl:w-[520px] max-w-full h-auto object-contain"
                   priority
+                  unoptimized
                 />
                 <style jsx>{`
                   @media (max-width: 768px) {

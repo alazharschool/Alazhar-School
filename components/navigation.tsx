@@ -53,6 +53,7 @@ const Navigation = React.memo(function Navigation() {
                       filter: 'drop-shadow(0 1px 2px #00000044)'
                     }}
                     priority
+                    unoptimized
                 />
               </div>
             </div>
