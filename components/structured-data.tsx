@@ -17,7 +17,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
           "name": "Al-Azhar School",
           "description": "Learn the Holy Quran from Al-Azhar scholars anywhere in the world. Online Quran memorization, Arabic language, and Islamic studies courses.",
           "url": process.env.NEXT_PUBLIC_SITE_URL || "https://alazharschool.com",
-          "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://alazharschool.com"}/logo.png`,
+          "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "https://alazharschool.com"}/alazhar-logo.png`,
           "image": `${process.env.NEXT_PUBLIC_SITE_URL || "https://alazharschool.com"}/og-image.jpg`,
           "address": {
             "@type": "PostalAddress",
@@ -97,7 +97,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) => {
             "name": "Al-Azhar School",
             "logo": {
               "@type": "ImageObject",
-              "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://alazharschool.com"}/logo.png`
+              "url": `${process.env.NEXT_PUBLIC_SITE_URL || "https://alazharschool.com"}/alazhar-logo.png`
             }
           },
           "datePublished": data.publishedAt,

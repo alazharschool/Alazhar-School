@@ -115,7 +115,7 @@
     font-feature-settings: "rlig" 1, "calt" 1;
 
     /* New Islamic geometric pattern background image */
-    background-image: url("/islamic-pattern-new.jpg");
+    background-image: url("/BACK.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -378,7 +378,7 @@
 
 /* Ensure all pages maintain the background */
 html {
-  background-image: url("/islamic-pattern-new.jpg");
+  background-image: url("/BACK.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
