@@ -30,7 +30,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${notoSansArabic.variable} ${notoSerif.variable} ${notoSansArabic.className}`}>
+      <body className={`${notoSansArabic.variable} ${notoSerif.variable} ${notoSansArabic.className}`} suppressHydrationWarning={true}>
         <ErrorBoundary>
           <UserProvider>
             <Navigation />

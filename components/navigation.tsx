@@ -44,7 +44,7 @@ const Navigation = React.memo(function Navigation() {
                 }}
               >
                 <Image
-                    src="/logo.png"
+                    src="/alazhar-logo.png"
                     alt="Al-Azhar School Round Logo"
                     width={80}
                     height={80}

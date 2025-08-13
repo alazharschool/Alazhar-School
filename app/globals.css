@@ -3,6 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fix hydration issues */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent layout shift */
+* {
+  box-sizing: border-box;
+}
+
 @layer base {
   :root {
     --background: 45 25% 95%; /* Warm beige background */

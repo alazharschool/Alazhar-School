@@ -155,7 +155,7 @@ export default function HeroSection() {
             {/* Right Side - Logo + Learn Quran Online + Divider */}
             <div className="flex flex-col items-center justify-center order-first lg:order-last animate-hero-fadein w-full mt-2 sm:mt-0">
                 <Image
-                  src="/logo.png"
+                  src="/alazhar-logo.png"
                 alt="Al-Azhar School Logo"
                 width={520}
                 height={270}
