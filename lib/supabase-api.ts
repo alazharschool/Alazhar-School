@@ -6,6 +6,17 @@ type Schedule = Database['public']['Tables']['schedules']['Row']
 type Teacher = Database['public']['Tables']['teachers']['Row']
 type Attendance = Database['public']['Tables']['attendance']['Row']
 
+// Lightweight type for testimonials to avoid breaking existing Database typing
+export interface Testimonial {
+  id: string
+  user_id: string
+  name: string
+  content: string
+  rating?: number
+  approved?: boolean
+  created_at: string
+}
+
 export interface ScheduleData {
   id: string;
   date: string;
@@ -284,5 +295,81 @@ export const supabaseAPI = {
     }
     
     return data.zoom_link
+  },
+
+  // =====================
+  // Testimonials
+  // =====================
+  async getApprovedTestimonials(limit = 12): Promise<Testimonial[]> {
+    const { data, error } = await supabase
+      .from('testimonials')
+      .select('*')
+      .eq('approved', true)
+      .order('created_at', { ascending: false })
+      .limit(limit)
+
+    if (error) {
+      console.error('Error fetching testimonials:', error)
+      return []
+    }
+    return (data as unknown as Testimonial[]) || []
+  },
+
+  async createTestimonial(payload: { content: string; rating?: number; name?: string }): Promise<Testimonial | null> {
+    const { data: userData } = await supabase.auth.getUser()
+    const userId = userData.user?.id
+    if (!userId) throw new Error('Not authenticated')
+
+    const insertPayload = {
+      user_id: userId,
+      name: payload.name ?? userData.user?.user_metadata?.name ?? userData.user?.email?.split('@')[0] ?? 'Student',
+      content: payload.content,
+      rating: payload.rating ?? null,
+      approved: true
+    }
+
+    const { data, error } = await supabase
+      .from('testimonials')
+      .insert(insertPayload as any)
+      .select('*')
+      .single()
+
+    if (error) {
+      console.error('Error creating testimonial:', error)
+      throw error
+    }
+    return data as unknown as Testimonial
+  },
+
+  async getTestimonials(approved?: boolean): Promise<Testimonial[]> {
+    let query = supabase.from('testimonials').select('*').order('created_at', { ascending: false })
+    if (approved !== undefined) {
+      query = query.eq('approved', approved)
+    }
+    const { data, error } = await query
+    if (error) {
+      console.error('Error fetching testimonials:', error)
+      return []
+    }
+    return (data as unknown as Testimonial[]) || []
+  },
+
+  async updateTestimonialApproval(id: string, approved: boolean): Promise<Testimonial> {
+    const { data, error } = await supabase
+      .from('testimonials')
+      .update({ approved })
+      .eq('id', id)
+      .select('*')
+      .single()
+    if (error) throw error
+    return data as unknown as Testimonial
+  },
+
+  async deleteTestimonial(id: string): Promise<void> {
+    const { error } = await supabase
+      .from('testimonials')
+      .delete()
+      .eq('id', id)
+    if (error) throw error
   }
 } 

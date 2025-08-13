@@ -10,8 +10,9 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, Users, Calendar, BookOpen, Settings, BarChart3, UserPlus, Edit, Trash2 } from 'lucide-react';
+import { Loader2, Users, Calendar, BookOpen, Settings, BarChart3, UserPlus, Edit, Trash2, CheckCircle2, XCircle } from 'lucide-react';
 import { scheduleAPI, ScheduleData, AttendanceStats } from '@/lib/api';
+import { supabaseAPI, Testimonial } from '@/lib/supabase-api';
 
 export default function AdminPage() {
   const { user } = useUser();
@@ -22,6 +23,8 @@ export default function AdminPage() {
   const [scheduleData, setScheduleData] = useState<ScheduleData[]>([]);
   const [stats, setStats] = useState<AttendanceStats | null>(null);
   const [activeTab, setActiveTab] = useState('overview');
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loadingTestimonials, setLoadingTestimonials] = useState(false);
 
   // Check if user is admin/teacher
   useEffect(() => {
@@ -42,6 +45,7 @@ export default function AdminPage() {
   useEffect(() => {
     if (user?.userType === 'admin' || user?.userType === 'teacher') {
       loadAdminData();
+      loadTestimonials();
     }
   }, [user]);
 
@@ -73,6 +77,18 @@ export default function AdminPage() {
       console.error('Error loading admin data:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadTestimonials = async () => {
+    setLoadingTestimonials(true);
+    try {
+      const data = await supabaseAPI.getTestimonials();
+      setTestimonials(data);
+    } catch (e) {
+      console.error('Error loading testimonials', e);
+    } finally {
+      setLoadingTestimonials(false);
     }
   };
 
@@ -114,7 +130,7 @@ export default function AdminPage() {
             <TabsTrigger value="students">Students</TabsTrigger>
             <TabsTrigger value="teachers">Teachers</TabsTrigger>
             <TabsTrigger value="schedule">Schedule</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
+            <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
           </TabsList>
 
           {/* Overview Tab */}
@@ -360,6 +376,54 @@ export default function AdminPage() {
                     </tbody>
                   </table>
                 </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* Testimonials Tab */}
+          <TabsContent value="testimonials" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Student Testimonials</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {loadingTestimonials ? (
+                  <div className="py-8 text-center">Loading...</div>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b">
+                          <th className="text-left py-3 px-4 font-semibold">Name</th>
+                          <th className="text-left py-3 px-4 font-semibold">Content</th>
+                          <th className="text-left py-3 px-4 font-semibold">Rating</th>
+                          <th className="text-left py-3 px-4 font-semibold">Approved</th>
+                          <th className="text-left py-3 px-4 font-semibold">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {testimonials.map(t => (
+                          <tr key={t.id} className="border-b">
+                            <td className="py-3 px-4 font-medium">{t.name}</td>
+                            <td className="py-3 px-4 max-w-xl">{t.content}</td>
+                            <td className="py-3 px-4">{t.rating ?? '-'}</td>
+                            <td className="py-3 px-4">{t.approved ? 'Yes' : 'No'}</td>
+                            <td className="py-3 px-4">
+                              <div className="flex gap-2">
+                                <Button variant="outline" size="sm" onClick={async () => { await supabaseAPI.updateTestimonialApproval(t.id, !t.approved!); await loadTestimonials(); }}>
+                                  {t.approved ? <XCircle className="w-3 h-3" /> : <CheckCircle2 className="w-3 h-3" />}
+                                </Button>
+                                <Button variant="outline" size="sm" onClick={async () => { await supabaseAPI.deleteTestimonial(t.id); await loadTestimonials(); }}>
+                                  <Trash2 className="w-3 h-3" />
+                                </Button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>

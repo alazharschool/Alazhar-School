@@ -203,26 +203,25 @@ Best regards,
       {/* Contact Form Section */}
       <section className="py-12 px-4 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-4">
             {/* Contact Information */}
             <FadeInSection>
-              <Card className="bg-gradient-to-br from-amber-50/95 to-amber-100/95 backdrop-blur-lg rounded-2xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-2 hover:scale-105 border border-amber-300 scroll-animate h-full flex flex-col relative">
-                {/* Gradient Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-amber-500 rounded-2xl opacity-30 blur-xl"></div>
-                <CardContent className="p-6 flex flex-col h-full relative z-10">
+              <Card className="bg-white rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/15 hover:-translate-y-1 hover:scale-[1.01] border border-amber-200 scroll-animate h-full flex flex-col relative">
+                {/* Removed amber gradient overlay to keep pure white */}
+                <CardContent className="p-3 flex flex-col h-full relative z-10">
                   <div className="text-center mb-6">
                     <div className="relative mx-auto mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="w-10 h-10 bg-gradient-to-r from-amber-600 to-orange-600 rounded-lg flex items-center justify-center shadow-md">
                         <Mail className="w-6 h-6 text-white" />
                       </div>
                       <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full animate-pulse"></div>
                     </div>
-                    <h2 className="text-2xl font-bold text-white mb-2" style={{ 
+                    <h2 className="text-xl font-bold text-white mb-2" style={{ 
                       backgroundColor: 'rgba(139, 69, 19, 0.1)', 
-                      padding: '10px 20px', 
-                      borderRadius: '12px',
+                      padding: '8px 16px', 
+                      borderRadius: '10px',
                       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8), 3px 3px 6px rgba(0, 0, 0, 0.6)',
-                      boxShadow: '0 3px 6px rgba(0, 0, 0, 0.3)',
+                      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.25)',
                       WebkitTextStroke: '1px rgba(139, 69, 19, 0.3)'
                     }}>
                       Contact Information
@@ -232,13 +231,13 @@ Best regards,
                     </p>
                   </div>
                   
-                  <div className="space-y-8 flex-grow">
+                  <div className="space-y-6 flex-grow">
                     <div className="flex items-start space-x-4 group">
-                      <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <div className="w-9 h-9 bg-gradient-to-r from-amber-500 to-amber-600 rounded-md flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shadow-md">
                         <Mail className="w-5 h-5 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3">Email Address</h3>
+                        <h3 className="text-base font-bold text-gray-900 mb-2">Email Address</h3>
                         <p className="text-gray-600 mb-2 text-sm leading-relaxed">al.azhar.school.london@gmail.com</p>
                         <p className="text-gray-600 mb-3 text-sm leading-relaxed">info.alazhar.school@gmail.com</p>
                         <p className="text-amber-600 font-medium text-sm leading-relaxed">Response within 2 hours</p>
@@ -246,16 +245,16 @@ Best regards,
                     </div>
                     
                     <div className="flex items-start space-x-4 group">
-                      <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <div className="w-9 h-9 bg-gradient-to-r from-amber-500 to-amber-600 rounded-md flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shadow-md">
                         <Phone className="w-5 h-5 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3">Phone Number</h3>
+                        <h3 className="text-base font-bold text-gray-900 mb-2">Phone Number</h3>
                         <a
                           href="https://wa.me/201023594533"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 mb-2 text-sm leading-relaxed bg-amber-600 hover:bg-amber-700 text-white px-3 py-1 rounded-lg transition-colors"
+                          className="inline-flex items-center gap-2 mb-2 text-sm leading-relaxed bg-amber-600 hover:bg-amber-700 text-white px-2.5 py-1 rounded-md transition-colors"
                         >
                           002- 01023594533
                         </a>
@@ -265,11 +264,11 @@ Best regards,
                     </div>
                     
                     <div className="flex items-start space-x-4 group">
-                      <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <div className="w-9 h-9 bg-gradient-to-r from-amber-500 to-amber-600 rounded-md flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shadow-md">
                         <MapPin className="w-5 h-5 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3">Location</h3>
+                        <h3 className="text-base font-bold text-gray-900 mb-2">Location</h3>
                         <p className="text-gray-600 mb-3 text-sm leading-relaxed">Cairo, Egypt</p>
                         <p className="text-amber-600 font-medium text-sm leading-relaxed">Global online presence</p>
                       </div>
@@ -277,37 +276,37 @@ Best regards,
                   </div>
                   
                   {/* Why Choose Us */}
-                  <div className="mt-8 p-5 bg-gradient-to-r from-amber-100/90 to-amber-150/90 rounded-xl border border-amber-300">
+                  <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
                     <h4 className="font-bold text-gray-900 mb-5 flex items-center text-lg">
                       <Star className="w-5 h-5 mr-2 text-amber-500" />
                       Why Choose Al-Azhar School?
                     </h4>
                     <div className="grid grid-cols-1 gap-4">
-                      <div className="flex items-start p-4 bg-gradient-to-r from-amber-50/95 to-amber-100/95 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-200">
+                      <div className="flex items-start p-3 bg-amber-50 rounded-md shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-200">
                         <Award className="w-5 h-5 mr-3 text-amber-600 mt-1" />
                         <div>
-                          <span className="font-bold text-gray-900 block mb-2 text-sm leading-relaxed">Certified Scholars</span>
+                          <span className="font-bold text-gray-900 block mb-1 text-sm leading-relaxed">Certified Scholars</span>
                           <p className="text-gray-600 text-xs leading-relaxed">Al-Azhar certified teachers</p>
                         </div>
                       </div>
-                      <div className="flex items-start p-4 bg-gradient-to-r from-amber-50/95 to-amber-100/95 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-200">
+                      <div className="flex items-start p-3 bg-amber-50 rounded-md shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-200">
                         <Users className="w-5 h-5 mr-3 text-amber-600 mt-1" />
                         <div>
-                          <span className="font-bold text-gray-900 block mb-2 text-sm leading-relaxed">Flexible Classes</span>
+                          <span className="font-bold text-gray-900 block mb-1 text-sm leading-relaxed">Flexible Classes</span>
                           <p className="text-gray-600 text-xs leading-relaxed">One-on-one & group sessions</p>
                         </div>
                       </div>
-                      <div className="flex items-start p-4 bg-gradient-to-r from-amber-50/95 to-amber-100/95 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-200">
+                      <div className="flex items-start p-3 bg-amber-50 rounded-md shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-200">
                         <Globe className="w-5 h-5 mr-3 text-amber-600 mt-1" />
                         <div>
-                          <span className="font-bold text-gray-900 block mb-2 text-sm leading-relaxed">Modern Technology</span>
+                          <span className="font-bold text-gray-900 block mb-1 text-sm leading-relaxed">Modern Technology</span>
                           <p className="text-gray-600 text-xs leading-relaxed">Advanced learning platforms</p>
                         </div>
                       </div>
-                      <div className="flex items-start p-4 bg-gradient-to-r from-amber-50/95 to-amber-100/95 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-200">
+                      <div className="flex items-start p-3 bg-amber-50 rounded-md shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-200">
                         <Target className="w-5 h-5 mr-3 text-amber-600 mt-1" />
                         <div>
-                          <span className="font-bold text-gray-900 block mb-2 text-sm leading-relaxed">Competitive Pricing</span>
+                          <span className="font-bold text-gray-900 block mb-1 text-sm leading-relaxed">Competitive Pricing</span>
                           <p className="text-gray-600 text-xs leading-relaxed">Affordable quality education</p>
                         </div>
                       </div>
@@ -319,34 +318,33 @@ Best regards,
 
             {/* Contact Form */}
             <FadeInSection>
-              <Card className="bg-gradient-to-br from-amber-50/95 to-amber-100/95 backdrop-blur-lg rounded-2xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-2 hover:scale-105 border border-amber-300 scroll-animate h-full flex flex-col relative">
-                {/* Gradient Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-amber-500 rounded-2xl opacity-30 blur-xl"></div>
-                <CardContent className="p-6 flex flex-col h-full relative z-10">
+              <Card className="bg-white rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-xl hover:shadow-amber-500/15 hover:-translate-y-1 hover:scale-[1.01] border border-amber-200 scroll-animate h-full flex flex-col relative">
+                {/* Removed amber gradient overlay to keep pure white */}
+                <CardContent className="p-3 flex flex-col h-full relative z-10">
                   <div className="text-center mb-6">
                     <div className="relative mx-auto mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="w-10 h-10 bg-gradient-to-r from-amber-600 to-orange-600 rounded-lg flex items-center justify-center shadow-md">
                         <Send className="w-6 h-6 text-white" />
                       </div>
                       <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full animate-pulse"></div>
                     </div>
-                    <h2 className="text-2xl font-bold text-white mb-2" style={{ 
+                    <h2 className="text-xl font-bold text-white mb-2" style={{ 
                       backgroundColor: 'rgba(139, 69, 19, 0.1)', 
-                      padding: '10px 20px', 
-                      borderRadius: '12px',
+                      padding: '8px 16px', 
+                      borderRadius: '10px',
                       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8), 3px 3px 6px rgba(0, 0, 0, 0.6)',
-                      boxShadow: '0 3px 6px rgba(0, 0, 0, 0.3)',
+                      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.25)',
                       WebkitTextStroke: '1px rgba(139, 69, 19, 0.3)'
                     }}>
                       Send Us a Message
                     </h2>
-                    <p className="text-gray-600 text-base">
+                    <p className="text-gray-600 text-sm">
                       We'd love to hear from you
                     </p>
                   </div>
                   
                   {submitted ? (
-                    <div className="text-center py-8 flex-grow flex flex-col justify-center">
+                    <div className="text-center py-6 flex-grow flex flex-col justify-center">
                       <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mx-auto mb-6 animate-bounce shadow-lg">
                         <CheckCircle className="w-8 h-8 text-white" />
                       </div>
@@ -445,12 +443,6 @@ Best regards,
                               errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : 'border-gray-300 focus:border-amber-600 focus:ring-amber-200'
                             }`}
                           />
-                          {errors.message && (
-                            <div className="flex items-center mt-2 text-red-600 text-sm font-medium">
-                              <AlertCircle className="w-4 h-4 mr-2" />
-                              {errors.message}
-                            </div>
-                          )}
                           <div className="text-sm text-gray-500 mt-2 text-right font-medium">
                             {message.length}/500 characters
                           </div>
@@ -499,7 +491,7 @@ Best regards,
       </section>
 
       {/* Quick Contact Cards */}
-      <section className="py-24 px-4 bg-white/40 backdrop-blur-sm">
+      <section className="py-24 px-4 bg-white/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-8" style={{ 
@@ -518,7 +510,7 @@ Best regards,
           </div>
           <div className="grid md:grid-cols-3 gap-10">
             <FadeInSection>
-              <Card className="bg-gradient-to-br from-amber-50/90 to-amber-100/90 backdrop-blur-sm rounded-3xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-4 hover:scale-105 border border-amber-300 scroll-animate">
+              <Card className="bg-white rounded-3xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 hover:scale-105 border border-amber-200 scroll-animate">
                 <CardContent className="p-10 text-center">
                   <div className="w-24 h-24 bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <MessageCircle className="w-12 h-12 text-white" />
@@ -540,7 +532,7 @@ Best regards,
             </FadeInSection>
 
             <FadeInSection>
-              <Card className="bg-gradient-to-br from-amber-50/90 to-amber-100/90 backdrop-blur-sm rounded-3xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-4 hover:scale-105 border border-amber-300 scroll-animate">
+              <Card className="bg-white rounded-3xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 hover:scale-105 border border-amber-200 scroll-animate">
                 <CardContent className="p-10 text-center">
                   <div className="w-24 h-24 bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Mail className="w-12 h-12 text-white" />
@@ -562,7 +554,7 @@ Best regards,
             </FadeInSection>
 
             <FadeInSection>
-              <Card className="bg-gradient-to-br from-amber-50/90 to-amber-100/90 backdrop-blur-sm rounded-3xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-4 hover:scale-105 border border-amber-300 scroll-animate">
+              <Card className="bg-white rounded-3xl overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 hover:scale-105 border border-amber-200 scroll-animate">
                 <CardContent className="p-10 text-center">
                   <div className="w-24 h-24 bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Clock className="w-12 h-12 text-white" />

@@ -12,6 +12,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ScrollingMarquee from "@/components/scrolling-marquee";
 import Quran3DIcon from "@/components/quran-3d-icon";
+import TestimonialsSection from "@/components/testimonials";
  
 
 export default function HomePage() {
@@ -452,6 +453,8 @@ export default function HomePage() {
           </StaggeredFadeIn>
         </div>
       </section>
+      {/* Testimonials */}
+      <TestimonialsSection />
       {/* Divider */}
       {/* Statistics Section */}
         <section className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-r from-amber-50 to-yellow-50 relative overflow-hidden" style={{
