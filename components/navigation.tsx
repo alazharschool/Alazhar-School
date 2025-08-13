@@ -44,16 +44,15 @@ const Navigation = React.memo(function Navigation() {
                 }}
               >
                 <Image
-                    src="/alazhar-logo.png"
+                    src="/logo.png"
                     alt="Al-Azhar School Round Logo"
                     width={80}
                     height={80}
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-contain rounded-full bg-white p-1"
                     style={{
                       filter: 'drop-shadow(0 1px 2px #00000044)'
                     }}
                     priority
-                    unoptimized
                 />
               </div>
             </div>
