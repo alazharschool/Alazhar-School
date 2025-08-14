@@ -38,20 +38,15 @@ const Navigation = React.memo(function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-1 sm:space-x-2 md:space-x-3 group">
             <div className="flex items-center space-x-1 sm:space-x-2">
-              <div className="logo-container w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-gold overflow-hidden shadow-lg"
-                style={{
-                  boxShadow: '0 2px 8px #00000033, 0 1px 4px #00000022'
-                }}
+              <div className="logo-container flex items-center justify-center transition-all duration-300 group-hover:scale-110"
               >
                 <Image
-                    src="/alazhar-logo.png?v=2"
+                    src="/logo.png?v=3"
                     alt="Al-Azhar School Round Logo"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain rounded-full bg-white p-1 ring-2 ring-yellow-600"
-                    style={{
-                      filter: 'drop-shadow(0 1px 2px #00000044)'
-                    }}
+                    width={48}
+                    height={48}
+                    className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+                    style={{ filter: 'drop-shadow(0 1px 2px #00000033)' }}
                     priority
                 />
               </div>
