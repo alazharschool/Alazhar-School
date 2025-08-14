@@ -43,9 +43,9 @@ const Navigation = React.memo(function Navigation() {
                 <Image
                     src="/logo.png?v=3"
                     alt="Al-Azhar School Round Logo"
-                    width={48}
-                    height={48}
-                    className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+                    width={96}
+                    height={96}
+                    className="h-14 sm:h-16 md:h-20 w-auto object-contain"
                     style={{ filter: 'drop-shadow(0 1px 2px #00000033)' }}
                     priority
                 />
