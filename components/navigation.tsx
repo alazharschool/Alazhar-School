@@ -44,11 +44,11 @@ const Navigation = React.memo(function Navigation() {
                 }}
               >
                 <Image
-                    src="/logo.png"
+                    src="/alazhar-logo.png?v=2"
                     alt="Al-Azhar School Round Logo"
                     width={80}
                     height={80}
-                    className="w-full h-full object-contain rounded-full bg-white p-1"
+                    className="w-full h-full object-contain rounded-full bg-white p-1 ring-2 ring-yellow-600"
                     style={{
                       filter: 'drop-shadow(0 1px 2px #00000044)'
                     }}
