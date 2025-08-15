@@ -69,7 +69,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection />
         {/* Decorative Divider below Hero, always fully visible */}
-        <div className="relative z-20 -mt-4 sm:-mt-8">
+        <div className="relative z-20 mt-4 sm:mt-6">
       <FadeInSection>
       <Link href="/about">
         <button
@@ -83,7 +83,7 @@ export default function HomePage() {
       <style jsx>{`
         @media (max-width: 768px) {
           .about-us-btn {
-            margin-top: 2.5rem !important;
+            margin-top: 3rem !important;
           }
         }
       `}</style>
