@@ -34,20 +34,19 @@ const Navigation = React.memo(function Navigation() {
   return (
     <nav className="nav-enhanced sticky top-0 z-50 shadow-premium bg-white/95 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
+        <div className="flex justify-between items-center h-28 sm:h-32 md:h-32">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-1 sm:space-x-2 md:space-x-3 group">
             <div className="flex items-center space-x-1 sm:space-x-2">
-              <div className="logo-container flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-              >
+              <div className="logo-container flex items-center justify-center transition-all duration-300 group-hover:scale-110 min-w-[80px] sm:min-w-[96px] md:min-w-[112px]">
                 <Image
-                    src="/logo.png?v=3"
-                    alt="Al-Azhar School Round Logo"
-                    width={96}
-                    height={96}
-                    className="h-14 sm:h-16 md:h-20 w-auto object-contain"
-                    style={{ filter: 'drop-shadow(0 1px 2px #00000033)' }}
-                    priority
+                  src="/logo.png?v=4"
+                  alt="Al-Azhar School Logo"
+                  width={160}
+                  height={160}
+                  className="h-20 sm:h-24 md:h-28 w-auto object-contain"
+                  style={{ filter: 'drop-shadow(0 1px 2px #00000033)' }}
+                  priority
                 />
               </div>
             </div>
